@@ -24,13 +24,8 @@ jobs:
           --health-timeout 2s
           --health-retries 20
 
-    strategy:
-      matrix:
-        ruby-version: ["2.7"]
-        node-version: ["14.x"]
-
     env:
-      DATABASE_URL: "postgres://postgres:postgres@localhost/hotwire_test"
+      DATABASE_URL: postgres://postgres:postgres@localhost/hotwire_test
       RAILS_ENV: test
 
     steps:
@@ -40,7 +35,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 14.x
 
       - name: Cache npm dependencies
         id: cache-npm-dependencies
@@ -55,7 +50,6 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
 
       - name: Build static assets
