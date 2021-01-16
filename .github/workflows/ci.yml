@@ -29,6 +29,9 @@ jobs:
         ruby-version: ["2.7"]
         node-version: ["14.x"]
 
+    env:
+      DATABASE_URL: "postgres://postgres:postgres@localhost/hotwire_test"
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
