@@ -1,24 +1,6 @@
-# README
+# Hotwire Demo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Continuous Integration](https://github.com/rosswilson/rails-hotwire-demo/workflows/Continuous%20Integration/badge.svg)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+A demo app to play around with [Turbo Rails](https://github.com/hotwired/turbo-rails) and
+[Stimulus Rails](https://github.com/hotwired/stimulus-rails).
