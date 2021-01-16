@@ -31,6 +31,7 @@ jobs:
 
     env:
       DATABASE_URL: "postgres://postgres:postgres@localhost/hotwire_test"
+      RAILS_ENV: test
 
     steps:
       - name: Checkout repository
@@ -56,6 +57,9 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
+
+      - name: Build static assets
+        run: ./bin/rails webpacker:compile
 
       - name: Run tests
         run: ./bin/rails test
